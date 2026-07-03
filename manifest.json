@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Better SoundCloud Playlist",
+  "version": "0.1.0",
+  "description": "Selecione varias faixas no SoundCloud e crie/adicione playlists em lote.",
+  "permissions": ["activeTab", "cookies", "storage"],
+  "host_permissions": [
+    "https://soundcloud.com/*",
+    "https://*.soundcloud.com/*"
+  ],
+  "action": {
+    "default_title": "Better SoundCloud",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["page_bridge.js"],
+      "matches": ["https://soundcloud.com/*"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://soundcloud.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

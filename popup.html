@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="popup.css">
+    <title>Better SoundCloud</title>
+  </head>
+  <body>
+    <h1>Better SoundCloud</h1>
+    <p id="status">Abra uma pagina do SoundCloud.</p>
+
+    <label for="clientIdInput">client_id</label>
+    <input id="clientIdInput" type="text" spellcheck="false" placeholder="valor de client_id">
+
+    <label for="tokenInput">OAuth token opcional</label>
+    <input id="tokenInput" type="password" spellcheck="false" placeholder="Authorization: OAuth ...">
+
+    <div class="row">
+      <button id="saveConfigBtn" type="button">Salvar</button>
+      <button id="clearConfigBtn" type="button" class="secondary">Limpar</button>
+    </div>
+    <p id="configStatus" class="hint"></p>
+
+    <button id="selectVisibleBtn" type="button">Selecionar musicas visiveis</button>
+    <button id="copyNativePayloadBtn" type="button" class="secondary space">Copiar payload nativo</button>
+    <button id="copyExtensionPayloadBtn" type="button" class="secondary space">Copiar payload da extensao</button>
+    <p class="hint">Use a barra flutuante no SoundCloud para criar ou adicionar a playlist.</p>
+    <script src="popup.js"></script>
+  </body>
+</html>
